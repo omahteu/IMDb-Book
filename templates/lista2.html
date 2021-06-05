@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../static/style.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>IMDb Livros</title>
+    </head>
+    <body>
+        <div>
+            <h1>{{ titulo }}</h1>
+            <h2>{{ descricao }}</h2>
+        </div>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Ano</th>
+                        <th>Autor(a)</th>
+                        <th>Nota</th>
+                        <th>Usuário</th>
+                    </tr>
+                    <tbody>
+                    {% for linha in opinioes %}
+                        <tr>
+                            <td>{{ linha._titulo }}</td>
+                            <td>{{ linha.ano }}</td>
+                            <td>{{ linha._autor }}</td>
+                            <td>{{ linha._nota }}</td>
+                            <td>{{ linha._usuario }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </thead>
+            </table>
+        </div>
+    </body>
+</html>
